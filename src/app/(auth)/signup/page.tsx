@@ -75,7 +75,7 @@ function page() {
       const res = await axios.post<ApiResponse>("api/signup", data);
       toast.success("Signup Sucess", { description: res.data.message });
 
-      router.replace(`/verify-code`);
+      router.replace(`/verify/${username}`);
     } catch (error) {
       console.error("Error in Signup of user", error);
       const axiosError = error as AxiosError<ApiResponse>;
@@ -159,7 +159,6 @@ function page() {
               type="submit"
               // aria-disabled={isSubmitting}
               disabled={isSubmitting}
-              className="p-4 rounded-2xl bg-blue-700 text-white"
             >
               {isSubmitting ? (
                 <>
