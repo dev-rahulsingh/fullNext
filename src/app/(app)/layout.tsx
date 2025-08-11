@@ -13,29 +13,24 @@
 // }>) {
 //   return (
 //     <html lang="en">
-     
+
 //         <body
 //           className={`${geistSans.variable} ${geistMono.variable} antialiased`}
 //         >
 //           <Navbar />
 //           {children}
-          
+
 //         </body>
-     
+
 //     </html>
 //   );
 // }
-import Navbar from '@/components/Navbar';
+import Navbar from "@/components/Navbar";
 
 interface RootLayoutProps {
   children: React.ReactNode;
 }
 
 export default async function RootLayout({ children }: RootLayoutProps) {
-  return (
-    <div className="flex flex-col min-h-screen">
-      <Navbar />
-      {children}
-    </div>
-  );
+  return <div className="flex flex-col min-h-screen">{children}</div>;
 }
